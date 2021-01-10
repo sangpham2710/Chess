@@ -195,8 +195,7 @@ function AImoves() {
         if (waitingAI === false) {
             waitingAI = true;
             stockfish.postMessage("position startpos moves " + movesList.join(" "));
-            // stockfish.postMessage("go depth " + stockfishDepth.toString());
-            stockfish.postMessage("go depth 20");
+            stockfish.postMessage("go depth " + stockfishDepth.toString());
         }
     }
 }
