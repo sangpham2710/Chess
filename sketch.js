@@ -8,7 +8,7 @@ let boards = [];
 let movesList = [];
 let move;
 let stockfish = new Worker("node_modules/stockfish/src/stockfish.js");
-let stockfishDepth = 20;
+let stockfishMovetime = 2 * 1000;
 let whiteAI = false;
 let enableAI = true;
 let waitingAI = false;
@@ -195,7 +195,7 @@ function AImoves() {
         if (waitingAI === false) {
             waitingAI = true;
             stockfish.postMessage("position startpos moves " + movesList.join(" "));
-            stockfish.postMessage("go depth " + stockfishDepth.toString());
+            stockfish.postMessage("go movetime " + stockfishMovetime.toString());
         }
     }
 }
