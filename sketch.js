@@ -23,7 +23,7 @@ function preload() {
 
 function goBack() {
     if (enableAI && !bothAI) {
-        if (boards.length > 1) {
+        if (boards.length > 2) {
             boards.pop();
             board = boards[boards.length - 1].clone();
             movesList.pop();
